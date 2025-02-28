@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from "react-markdown";
 
-const FAQ = ({ heading, subheading, data }) => {
+const Reviews = ({ heading, subheading, generated, data }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleToggle = (index) => {
@@ -9,10 +9,10 @@ const FAQ = ({ heading, subheading, data }) => {
   };
 
   useEffect(() => {
-    const faqItems = document.querySelectorAll('.faq__entry');
-    faqItems.forEach((item, index) => {
-      const reply = item.querySelector('.faq__reply');
-      const space = item.querySelector('.faq__space');
+    const reviewItems = document.querySelectorAll('.review__entry');
+    reviewItems.forEach((item, index) => {
+      const reply = item.querySelector('.review__reply');
+      const space = item.querySelector('.review__space');
 
       const updateMaxHeight = () => {
         reply.setAttribute('data-max', space.offsetHeight);
@@ -31,28 +31,30 @@ const FAQ = ({ heading, subheading, data }) => {
   }, [openIndex]);
 
   return (
-    <section className="faq">
-      <div id="faq" className="faq__anchor"></div>
-      <header className="faq__header">
+    <section className="review">
+      <header className="review__header">
         <h3 className="h2 review__heading"><ReactMarkdown children={heading} components={{ p: ({ children }) => <>{children}</> }} /></h3>
         <ReactMarkdown>{subheading}</ReactMarkdown>
       </header>
-      <div className="faq__list">
+      <ol className="review__list">
         {data.map((entry, index) => (
-          <section key={index} className={`faq__entry ${openIndex === index ? 'open visible' : ''}`}>
-            <h3 className="faq__question" onClick={() => handleToggle(index)}>
+          <li key={index} className={`review__entry ${openIndex === index ? 'open visible' : ''}`}>
+            <h3 className="review__question" onClick={() => handleToggle(index)}>
               {entry.question}
             </h3>
-            <div className="faq__reply">
-              <div className="faq__space">
+            <div className="review__reply">
+              <div className="review__space">
                 <ReactMarkdown>{entry.answer}</ReactMarkdown>
               </div>
             </div>
-          </section>
+          </li>
         ))}
+      </ol>
+      <div className="review__generated">
+        <p>{generated}</p>
       </div>
     </section>
   );
 };
 
-export default FAQ;
+export default Reviews;

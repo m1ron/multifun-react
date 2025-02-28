@@ -1,5 +1,6 @@
 @use '../var' as *;
 @use '../breakpoints' as *;
+@use '../default' as *;
 
 
 /* ===== REVIEW ===== */
@@ -40,6 +41,11 @@
     margin-bottom: 14px;
     @include media-breakpoint-up(xl) {
       line-height: 76px;
+    }
+
+    em {
+      @extend .zigzag;
+      font-style: inherit;
     }
   }
 
