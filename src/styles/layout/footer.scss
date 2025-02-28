@@ -4,6 +4,8 @@
 /* ===== FOOTER ===== */
 .footer {
   padding: 40px 0;
+  position: relative;
+  z-index: 10;
   @include media-breakpoint-up(md) {
     padding: 80px 0;
   }
