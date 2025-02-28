@@ -41,9 +41,9 @@ const Header = () => {
   return (<header className="header">
     <h1 className="header__title">{headerName}</h1>
     <figure className="header__logo">
-      <Link to={indexLink}>
+      <a href={indexLink}>
         <img src={headerLogo} alt={headerName} />
-      </Link>
+      </a>
     </figure>
     <nav className={`header__nav ${isVisible ? 'visible' : ''} ${isOpen ? 'open' : ''}`}>
       <div className="header__space">
