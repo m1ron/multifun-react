@@ -1,0 +1,79 @@
+@use 'var' as *;
+@use 'breakpoints' as *;
+
+
+/* ===== BUTTONS ===== */
+.buttons {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+  @include media-breakpoint-up(md) {
+    justify-content: center;
+  }
+
+  .btn {
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      max-width: 344px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
+.btn {
+  padding: 10px 44px;
+  border: none;
+  border-radius: 16px;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  background: white;
+  transition: border-color $effect, color $effect, background-color $effect, box-shadow $effect;
+  outline: none;
+  cursor: pointer;
+  @include media-breakpoint-up(xl) {
+    min-width: 168px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  @media (hover: hover) {
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(white, .3);
+    }
+  }
+
+  &-primary {
+    background: $color-green-secondary;
+    @media (hover: hover) {
+      &:hover, &:focus {
+        background: $color-green-bright;
+      }
+      &:focus {
+        box-shadow: 0 0 0 4px rgba($color-green-bright, .3);
+      }
+    }
+  }
+
+  &-outline {
+    border: 1px solid $color-green-secondary;
+    color: $color-green-secondary;
+    background: none;
+    @media (hover: hover) {
+      &:hover, &:focus {
+        border-color: $color-green-bright;
+      }
+    }
+  }
+}

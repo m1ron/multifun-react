@@ -1,0 +1,206 @@
+@use '../var' as *;
+@use '../breakpoints' as *;
+
+
+/* ===== ONE ===== */
+.one {
+  margin: 82px 0;
+  position: relative;
+  text-align: center;
+  @include media-breakpoint-up(xl) {
+    margin-top: 206px;
+    margin-bottom: 100px;
+  }
+
+  &__anchor {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -84px;
+    left: 0;
+    @include media-breakpoint-up(xl) {
+      top: -152px;
+    }
+  }
+
+  &__header {
+    max-width: 550px;
+    margin: 0 auto;
+    p:last-child {margin-bottom: 0;}
+  }
+
+  &__heading {
+    padding: 0 40px;
+    line-height: 80px;
+    margin-bottom: 32px;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    cursor: default;
+    @include user-select;
+    @include media-breakpoint-down(xss) {
+      font-size: 40px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 38px;
+      line-height: 74px;
+    }
+
+    &::after {
+      @include pseudo;
+      width: 35px;
+      height: 27px;
+      margin-top: 1px;
+      background: top left;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='55' height='42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.456.495c-.711.18-1.402.455-2.093.702-.691.248-1.499.468-1.998 1.033a1.376 1.376 0 0 0-.329 1.252.98.98 0 0 0 .096.248c.171.55.746.922 1.32.846.466-.061.822-.385.972-.798.547-.227 1.115-.413 1.67-.605H4.08c.02-.007.034-.014.055-.014.013-.007.02-.007.034-.014a.052.052 0 0 0 .034-.014h-.007c.007 0 .014 0 .028-.007 0 0 .006 0 .006-.007.5-.165 1-.31 1.512-.426a16.14 16.14 0 0 1 1.622-.234c.253-.014.5-.007.753 0 .643.055 1.286.151 1.915.268 1.06.22 2.128.434 3.175.723.568.158 1.156.289 1.724.482.561.185 1.129.378 1.683.57.609.249 1.225.496 1.834.75.308.125.609.29.916.434.281.131.568.269.856.4.882.468 1.744.936 2.607 1.445a71.574 71.574 0 0 1 2.592 1.63c.548.4 1.095.806 1.643 1.205.28.207.54.44.807.66.267.221.534.434.8.655.698.626 1.383 1.238 2.046 1.899.712.695 1.382 1.41 2.06 2.14.773.895 1.532 1.803 2.278 2.719.698.86 1.32 1.782 1.943 2.697.404.64.807 1.28 1.177 1.941.383.675.732 1.356 1.08 2.044.288.64.575 1.28.829 1.927.246.633.472 1.266.697 1.913.5 1.604 1.02 3.214 1.355 4.859-.014-.055-.027-.103-.034-.158.041.261.075.523.102.784.021.447.028.895.014 1.349-.007.66.561 1.218 1.211 1.218.67 0 1.204-.55 1.211-1.218.014-1.094-.034-2.175-.3-3.242a67.572 67.572 0 0 0-1.102-3.819 33.903 33.903 0 0 0-1.334-3.6 48.72 48.72 0 0 0-.952-2.002c-.307-.605-.65-1.19-.978-1.782-.123-.214-.26-.42-.39-.633-.205-.324-.397-.654-.616-.97-.342-.503-.67-1.012-1.033-1.501-.807-1.067-1.621-2.127-2.497-3.145-1.772-2.044-3.647-3.998-5.74-5.712-1.033-.847-2.08-1.693-3.202-2.422-.555-.358-1.102-.737-1.67-1.074-.568-.337-1.135-.702-1.717-1.012-.636-.337-1.259-.709-1.909-1.018-.609-.29-1.218-.571-1.827-.86-.28-.138-.588-.241-.875-.358-.329-.138-.657-.269-.992-.406-.295-.124-.603-.207-.904-.31-.355-.124-.718-.24-1.074-.365-.513-.172-1.046-.289-1.566-.433-.459-.124-.924-.227-1.39-.344C11.176.455 9.76.138 8.336.028A6.988 6.988 0 0 0 7.68 0c-1.074.02-2.17.22-3.223.495ZM4.203 3.117h.014-.014ZM4.19 3.124h.006-.007Z' fill='%23fff'/%3E%3Cpath d='M4.12 3.152c-.013.007-.026.007-.033.014.013-.007.02-.014.034-.014ZM52.178 19.82c0 .034 0 .062-.007.09-.137 1.796-.465 3.557-.766 5.333-.15.908-.267 1.817-.404 2.732-.143.97-.308 1.934-.479 2.904-.123.516-.246 1.032-.37 1.542-.06.248-.15.482-.232.722-.075.248-.157.489-.233.737-.17.454-.342.901-.52 1.355-.157.413-.355.813-.54 1.219-.287.523-.561 1.046-.89 1.541a9.809 9.809 0 0 1-.52.675c-.095.096-.198.2-.3.295l-.185.145a1.873 1.873 0 0 1-.41.206c-.151.049-.302.09-.452.124-.253.042-.5.076-.753.097a9.125 9.125 0 0 1-.869 0c.014 0 .028 0 .035.007-.315-.028-.63-.07-.945-.124a8.851 8.851 0 0 1-.834-.234c-.404-.152-.794-.33-1.177-.516-.24-.138-.486-.269-.725-.406-.26-.145-.5-.324-.74-.489h.008c-.281-.213-.568-.434-.849-.654-.328-.296-.657-.578-.965-.888a69.87 69.87 0 0 1-1.21-1.252c-.65-.688-1.287-1.383-1.916-2.085a102.934 102.934 0 0 1-2.593-3.132c-.883-1.108-1.807-2.188-2.628-3.344-.075-.131-.157-.255-.232-.386-.007-.013-.014-.02-.014-.034a1.225 1.225 0 0 0-1.334-.895 1.227 1.227 0 0 0-1.033 1.377c.048.35.226.674.404.97.184.303.383.606.595.888.396.516.807 1.025 1.21 1.535.829 1.025 1.636 2.057 2.47 3.076a70.772 70.772 0 0 0 2.6 2.952l1.396 1.487c.465.495.958.95 1.464 1.397.493.44 1.02.84 1.574 1.204.561.378 1.136.723 1.752 1.012.478.22.95.42 1.45.584.794.269 1.635.372 2.477.407a7.273 7.273 0 0 0 2.517-.33c.774-.248 1.417-.723 1.97-1.315.747-.798 1.26-1.762 1.773-2.719.164-.302.287-.626.431-.936.116-.254.226-.509.328-.77.254-.668.5-1.328.719-2.01.089-.282.198-.564.267-.846.095-.393.184-.785.28-1.184.246-1.04.404-2.099.568-3.159.157-1.039.308-2.085.465-3.124.15-1.012.342-2.017.507-3.021.075-.475.13-.957.177-1.432.048-.433.11-.874.11-1.307a1.226 1.226 0 0 0-1.211-1.219c-.664-.027-1.204.53-1.211 1.198Z' fill='%23fff'/%3E%3Cpath d='m39.897 37.775-.007-.007c0 .007 0 .007.007.007Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+      background-size: contain;
+      transform: skew(-8deg);
+      position: absolute;
+      top: 50%;
+      right: -4px;
+      z-index: -1;
+      @include media-breakpoint-up(xl) {
+        width: 55px;
+        height: 42px;
+        margin-top: -12px;
+        margin-left: 92px;
+        top: 100%;
+        left: 100%;
+        right: auto;
+      }
+    }
+
+    em {
+      margin-right: 10px;
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      font-style: normal;
+      color: $color-chinese;
+      @include media-breakpoint-up(xl) {
+        margin-right: 13px;
+      }
+
+      &::after {
+        @include pseudo;
+        border-radius: 10px;
+        position: absolute;
+        top: 8px;
+        left: -11px;
+        right: -14px;
+        bottom: 6px;
+        z-index: -1;
+        background: $color-green;
+        transform: skew(-8.5deg);
+        @include media-breakpoint-up(xss) {
+          top: 4px;
+          left: -15px;
+          right: -18px;
+          bottom: 2px;
+        }
+        @include media-breakpoint-up(xl) {
+          top: 0;
+          bottom: -4px;
+          left: -12px;
+          right: -14px;
+        }
+      }
+    }
+  }
+
+  &__screenshots {
+    max-width: 600px;
+    margin: 32px auto 0;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+      max-width: 780px;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: none;
+      padding: 0 120px;
+      margin-top: 70px;
+    }
+
+    figure {
+      border: 1px solid $color-night;
+      margin: 0;
+      background: $color-dark;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        cursor: default;
+        @include user-select;
+        @include user-drag;
+      }
+
+      &.d {
+        padding: 6px;
+        border-radius: 20px;
+        margin-right: 5.54%;
+        @include media-breakpoint-up(md) {
+          padding: 10px;
+          border-radius: 28px;
+          box-shadow: 0 4px 24px 0 rgba(black, .24);
+        }
+        @include media-breakpoint-up(lg) {
+          margin-right: 15%;
+        }
+        @include media-breakpoint-up(xl) {
+          width: auto;
+          padding: 19px;
+          border-radius: 32px;
+          margin-right: 162px;
+        }
+
+        img {
+          border-radius: 14px;
+          box-shadow: 0 4px 20px 20px rgba($color-dark, .2);
+          @include media-breakpoint-up(md) {
+            box-shadow: none;
+          }
+        }
+      }
+
+      &.m {
+        width: 23.907%;
+        padding: 4.5px;
+        border-radius: 14px;
+        position: absolute;
+        top: 26px;
+        right: 0;
+        box-shadow: 0 4px 24px 0 rgba(black, .24);
+        @include media-breakpoint-up(md) {
+          padding: 8px;
+          border-radius: 24px;
+          bottom: -16px;
+          top: auto;
+        }
+        @include media-breakpoint-up(lg) {
+          width: 18%;
+          right: 40px;
+        }
+        @include media-breakpoint-up(xl) {
+          width: 208px;
+          padding: 13px;
+          border-radius: 30px;
+          top: auto;
+          right: 120px;
+          bottom: 0;
+        }
+
+        img {
+          border-radius: 8px;
+          @include media-breakpoint-up(md) {
+            border-radius: 14px;
+          }
+          @include media-breakpoint-up(xl) {
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}

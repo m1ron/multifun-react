@@ -1,0 +1,32 @@
+@use 'vendor/normalize';
+@use 'vendor/nice-select';
+@use 'vendor/glide';
+
+@use 'var';
+@use 'fonts';
+@use 'breakpoints';
+@use 'default';
+@use 'button';
+
+@use 'layout/main';
+@use 'layout/header';
+@use 'layout/wrapper';
+@use 'layout/footer';
+@use 'layout/form';
+
+@use 'section/index';
+@use 'section/logos';
+@use 'section/categories-big';
+@use 'section/categories';
+@use 'section/how';
+@use 'section/one';
+@use 'section/games';
+@use 'section/faq';
+@use 'section/cta';
+@use 'section/hero';
+@use 'section/catalog';
+@use 'section/review';
+@use 'section/features';
+@use 'section/bonus';
+@use 'section/testimonials';
+@use 'section/slider';

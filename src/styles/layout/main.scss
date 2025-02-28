@@ -1,0 +1,115 @@
+@use '../var' as *;
+@use '../breakpoints' as *;
+
+/* ===== MAIN ===== */
+.main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 85px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-up(xl) {
+    padding-top: 130px;
+  }
+
+  &.dotted {
+    &::after {
+      @include pseudo;
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      opacity: .75;
+      background: url('#{$img}/bg.svg') repeat-y top center;
+      background-attachment: fixed;
+      background-position-y: var(--parallax-offset);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+      @include media-breakpoint-down(xl) {
+        background-size: 100% auto;
+      }
+    }
+  }
+
+  &--flex {
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper {
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+  }
+
+  &--login {
+    padding-top: 40px;
+    @include media-breakpoint-up(xl) {
+      //padding-top: 0;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 40px;
+      @include media-breakpoint-up(md) {
+        max-width: 1400px;
+        min-height: 100vh;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        flex-direction: row;
+        align-items: center;
+        gap: 126px;
+      }
+    }
+
+    .col {
+      @include media-breakpoint-up(md) {
+        flex-shrink: 0;
+        &:nth-child(1) {width: 56%; flex-grow: 1;}
+        &:nth-child(2) {width: 44%;}
+      }
+    }
+
+    .form-login {
+      @include media-breakpoint-up(md) {
+        max-width: 380px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .form-heading {
+        @include media-breakpoint-up(md) {
+          margin-bottom: 34px;
+          font-size: 32px;
+        }
+      }
+
+      .form-link-bottom {
+        @include media-breakpoint-up(md) {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    .slider {
+      @include media-breakpoint-up(md) {
+        height: calc(100vh - 80px);
+        max-height: 944px;
+      }
+      @include media-breakpoint-down(md) {
+        max-width: 400px;
+        height: 250px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

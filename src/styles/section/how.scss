@@ -1,0 +1,193 @@
+@use '../var' as *;
+@use '../breakpoints' as *;
+
+
+/* ===== HOW IT WORKS ===== */
+.how {
+  margin: 86px -16px 82px;
+  padding: 84px 16px 100px;
+  position: relative;
+  text-align: center;
+  background: $color-chinese;
+  @include media-breakpoint-up(sm) {
+    padding-right: 32px;
+    padding-left: 32px;
+    border-radius: 32px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @include media-breakpoint-up(md) {
+    border-radius: 44px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include media-breakpoint-up(xl) {
+    border-radius: 44px;
+    margin: 132px 0 120px;
+    padding: 76px 0 140px;
+  }
+
+  &__anchor {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -84px;
+    left: 0;
+    @include media-breakpoint-up(xl) {
+      top: -152px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 23px;
+    @include media-breakpoint-up(xl) {
+      max-width: 680px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    + p {
+      @include media-breakpoint-up(md) {
+        max-width: 680px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 80px 0 0;
+    counter-reset: item;
+    list-style: none;
+    font-size: 20px;
+    line-height: 28px;
+    position: relative;
+    @include media-breakpoint-up(md) {
+      margin-top: 108px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 30px;
+    }
+    @include media-breakpoint-up(xl) {
+      gap: 40px;
+    }
+
+    &::before, &::after {
+      @include pseudo;
+      display: none;
+      width: 17%;
+      height: 1px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='264' height='1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23fff' stroke-opacity='.08' stroke-linecap='round' stroke-dasharray='10.4 10.4' d='M.5.5h263'/%3E%3C/svg%3E");
+      background-size: auto 1px;
+      position: absolute;
+      top: 23px;
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 264px;
+      }
+    }
+
+    &::before {
+      right: 50%;
+      transform: translateX(-50%);
+      @include media-breakpoint-up(xl) {
+        transform: translateX(-80px);
+      }
+    }
+
+    &::after {
+      left: 50%;
+      transform: translateX(50%);
+      @include media-breakpoint-up(xl) {
+        transform: translateX(80px);
+      }
+    }
+
+    li {
+      flex: 1 0 0;
+      @include media-breakpoint-up(md) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 130px;
+        @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+        }
+      }
+
+      &::before {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        content: counter(item);
+        counter-increment: item;
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 500;
+        color: black;
+        flex-grow: 0;
+        background: $color-green;
+        box-shadow: 0 0 0 12px rgba($color-green, .12);
+        @include media-breakpoint-up(md) {
+          margin-bottom: 52px;
+        }
+      }
+
+      &:not(:nth-child(2)) {
+        &::before {
+          @include media-breakpoint-up(md) {
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 0 0 8px rgba($color-green, .12);
+            margin-bottom: 60px;
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      strong {
+        font-weight: inherit;
+        color: $color-green;
+      }
+
+      p {
+        margin: 0;
+        flex-grow: 0;
+      }
+    }
+  }
+
+  &__icon {
+    margin: 28px 0 0;
+    @include media-breakpoint-up(md) {
+      margin-top: 30px;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      margin: 0 auto;
+      display: block;
+      cursor: default;
+      @include user-select;
+      @include user-drag;
+    }
+  }
+}

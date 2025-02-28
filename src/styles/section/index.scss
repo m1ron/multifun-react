@@ -1,0 +1,101 @@
+@use '../var' as *;
+@use '../breakpoints' as *;
+
+
+/* ===== INDEX ===== */
+.index {
+  position: relative;
+  @include media-breakpoint-up(md) {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @include media-breakpoint-up(xl) {
+    min-height: 600px;
+    padding-top: 116px;
+  }
+
+  &__content {
+    padding: 20px 0;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      font-size: 22px;
+      line-height: 32px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 24px;
+      line-height: 34px;
+    }
+
+    strong {
+      font-weight: inherit;
+      color: $color-green;
+      @include media-breakpoint-up(md) {
+        white-space: nowrap;
+      }
+    }
+
+    p {
+      @include media-breakpoint-up(md) {
+        max-width: 840px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 0 -10px 32px;
+    @include media-breakpoint-up(xss) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__buttons {
+    width: auto;
+    margin: 33px 9px 0;
+    @include media-breakpoint-up(md) {
+      margin-top: 54px;
+    }
+
+    .btn {
+      @include user-select;
+    }
+  }
+
+  &::after {
+    @include pseudo;
+    width: 276px;
+    height: 198px;
+    margin-left: 50px;
+    background: url('#{$img}/ball.png') center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    z-index: -1;
+    opacity: .7;
+    @include media-breakpoint-up(md) {
+      width: 400px;
+      height: 286px;
+      margin-left: 220px;
+      bottom: -100px;
+      opacity: 1;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 580px;
+      height: 416px;
+      margin-left: 328px;
+      bottom: -126px;
+    }
+  }
+}

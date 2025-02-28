@@ -1,0 +1,121 @@
+@use '../var' as *;
+@use '../breakpoints' as *;
+
+
+/* ===== CATEGORIES ===== */
+.categories {
+  padding: 24px 16px;
+  margin: 11px -16px 0;
+  position: relative;
+  display: flex;
+  @include media-breakpoint-up(sm) {
+    width: 100vw;
+    padding-left: calc(50vw - 270px);
+    left: 50%;
+    margin-left: -50vw;
+  }
+  @include media-breakpoint-up(md) {
+    padding-left: calc(50vw - 360px);
+    padding-right: 20px;
+    margin-top: 40px;
+    margin-right: -20px;
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-down(lg) {
+    overflow: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {display: none;}
+  }
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    padding: 24px 0;
+    margin: 40px 0;
+    left: auto;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-top: 96px;
+    margin-bottom: 68px;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    font: 600 16px/20px $font-secondary;
+    text-transform: uppercase;
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 18px;
+      gap: 12px;
+    }
+
+    li {
+      @include media-breakpoint-up(lg) {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        min-width: 0;
+      }
+    }
+
+    a {
+      min-width: 180px;
+      padding: 20px;
+      border-radius: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      background: $color-chinese;
+      transition: color $effect-s, background-color $effect-s, box-shadow $effect-s;
+      @include user-select;
+      outline: none;
+      @include media-breakpoint-up(lg) {
+        @include media-breakpoint-down(xl) {
+          min-width: 140px;
+        }
+      }
+      @include media-breakpoint-up(xl) {
+        padding: 31px;
+        border-radius: 34px;
+        gap: 8px;
+      }
+
+      @media (hover: hover) {
+        &:hover, &:focus {
+          background: $color-marlin;
+        }
+      }
+    }
+
+    img {
+      width: auto;
+      height: 20px;
+      @include user-select;
+      @include user-drag;
+      cursor: default;
+      @include media-breakpoint-up(xl) {
+        height: 30px;
+      }
+    }
+
+    li.active a {
+      color: black;
+      background: $color-green;
+      img {filter: brightness(-1000%);}
+      @media (hover: hover) {
+        &:focus {box-shadow: 0 0 0 4px rgba($color-green-bright, .3);}
+      }
+    }
+  }
+}

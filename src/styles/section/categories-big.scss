@@ -1,0 +1,100 @@
+@use '../var' as *;
+@use '../breakpoints' as *;
+
+
+/* ===== CATEGORIES BIG ===== */
+.categories-big {
+  padding: 20px 0;
+  @include media-breakpoint-up(md) {
+    padding: 38px 0;
+  }
+
+  &__list {
+    max-width: 344px;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    gap: 16px;
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 600;
+    text-transform: uppercase;
+    @include media-breakpoint-up(md) {
+      max-width: none;
+      flex-wrap: nowrap;
+      gap: 12p;
+    }
+    @include media-breakpoint-up(xl) {
+      margin: 0;
+      justify-content: center;
+      gap: 20px;
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      flex-basis: calc(50% - 8px);
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        flex-basis: calc(20% - 8px);
+      }
+
+      a {
+        border-radius: 32px;
+        position: relative;
+        display: block;
+        color: white;
+        transition: color $effect;
+        outline: none;
+
+        @media (hover: hover) {
+          &:hover, &:focus {
+            color: white;
+            text-decoration: none;
+
+            .categories-big__icon {
+              background: $color-marlin;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    max-width: 164px;
+    height: auto;
+    border-radius: 32px;
+    margin: 0 auto 16px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-chinese;
+    transition: background-color $effect;
+    @include media-breakpoint-up(xl) {
+      max-width: 240px;
+      height: 172px;
+      margin-bottom: 22px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      @include user-select;
+      @include user-drag;
+      @include media-breakpoint-down(lg) {
+        transform: scale(.9);
+      }
+      @include media-breakpoint-down(xss) {
+        transform: scale(.8);
+      }
+    }
+  }
+}

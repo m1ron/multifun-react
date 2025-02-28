@@ -1,0 +1,52 @@
+// ===== VARIABLES =====
+$min-width: 320px;
+$max-width: 1920px;
+
+// Media Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  min: 321px, // Min width
+  xss: 375px, // iPhone SE
+  xsm: 390px, // iPhone 14
+  xsl: 420px, // iPhone Plus/Max
+  sm: 572px,
+  md: 768px,
+  lg: 992px,
+  xl: 1340px,
+  xxl: 1600px,
+  xxxl: 1900px
+) !default;
+
+// Paths
+$img: './assets/img';
+$fonts: './assets/fonts';
+
+// Fonts
+$font-default: 'Barlow Condensed', sans-serif;
+$font-secondary: 'Jost', sans-serif;
+
+// Colors
+$color-chinese: #0d1217;
+$color-marlin: #1b2127;
+$color-dark: #161f27;
+$color-eerie: #161b22;
+$color-gunmetal: #252c36;
+$color-charcoal: #3a4554;
+$color-night: #4b5968;
+
+$color-green: #99ff50;
+$color-green-secondary: #94f64e;
+$color-green-bright: #7dff20;
+
+// Transition Settings
+$bezier: cubic-bezier(.250, .460, .450, .940);
+$easing: ease;
+$effect: .3s $easing;
+$effect-s: .1s $easing;
+
+// Mixins
+@mixin pseudo {content: '';display: block;overflow: hidden;}
+@mixin clearfix {content: '';display: table;clear: both;}
+@mixin font-smooth {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+@mixin user-select {-webkit-touch-callout: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+@mixin user-drag {-webkit-user-drag: none;user-drag: none;}

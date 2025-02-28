@@ -1,0 +1,85 @@
+@use '../var' as *;
+@use '../breakpoints' as *;
+
+
+/* ===== CTA ===== */
+.cta {
+  margin: 56px 0;
+  padding: 76px 50px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  cursor: default;
+  @include media-breakpoint-up(xl) {
+    padding: 84px 0;
+    margin-top: 160px;
+    margin-bottom: 102px;
+  }
+
+  &::before {
+    @include pseudo;
+    border-radius: 68px;
+    background: $color-chinese;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 8px;
+    bottom: 0;
+    z-index: -2;
+    transform: skew(-3deg);
+    @include media-breakpoint-up(xl) {
+      left: 20px;
+      right: -10px;
+      transform: skew(-7deg);
+    }
+  }
+
+  &::after {
+    @include pseudo;
+    width: 68px;
+    height: 60px;
+    margin: -25px 0 0 -60px;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-image: url("data:image/svg+xml,%3Csvg width='127' height='113' viewBox='0 0 127 113' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M101.237 0.0540665C100.36 0.00030531 99.4058 0.000667048 98.4159 0.00103774L98.169 0.00109505H59.3602C27.3715 0.00109505 0 24.4506 0 56.3343C0 88.218 27.3714 112.668 59.3602 112.668H98.169L98.4158 112.668C99.4058 112.668 100.36 112.668 101.237 112.615C114.23 111.818 125.721 101.945 126.688 88.1545C126.751 87.2502 126.75 86.2755 126.75 85.3721L126.75 85.1269V27.5418L126.75 27.2966C126.75 26.3932 126.751 25.4184 126.688 24.5141C125.721 10.7239 114.23 0.850733 101.237 0.0540665ZM55.919 71.3564C64.1546 71.3564 70.8308 64.6307 70.8308 56.3342C70.8308 48.0377 64.1546 41.312 55.919 41.312C47.6835 41.312 41.0073 48.0377 41.0073 56.3342C41.0073 64.6307 47.6835 71.3564 55.919 71.3564Z' fill='%2399FF50'/%3E%3C/svg%3E");
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    z-index: -1;
+    @include media-breakpoint-up(xl) {
+      width: 127px;
+      height: 113px;
+      margin-top: -56px;
+      margin-left: -99px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 22px;
+    font-size: 32px;
+    line-height: 1.25em;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    @include media-breakpoint-up(xss) {
+      font-size: 40px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 26px;
+      font-size: 64px;
+    }
+  }
+
+  .btn {
+    min-width: 176px;
+    font-size: 20px;
+    @include user-select;
+    @include media-breakpoint-down(md) {
+      min-width: 164px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 18px;
+    }
+  }
+}
