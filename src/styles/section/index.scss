@@ -1,5 +1,6 @@
 @use '../var' as *;
 @use '../breakpoints' as *;
+@use '../default' as *;
 
 
 /* ===== INDEX ===== */
@@ -37,6 +38,10 @@
       color: $color-green;
       @include media-breakpoint-up(md) {
         white-space: nowrap;
+      }
+
+      em {
+        @extend .zigzag;
       }
     }
 

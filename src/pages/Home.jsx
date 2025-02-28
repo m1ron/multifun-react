@@ -2,6 +2,9 @@ import Index from '../components/Index';
 import Logos from '../components/Logos';
 import How from '../components/How';
 import One from '../components/One';
+import Categories from '../components/CategoriesBig';
+import Games from '../components/Games';
+import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
 
 const Home = () => {
@@ -9,7 +12,13 @@ const Home = () => {
     <main id="#top" className="main dotted">
       <article className="wrapper">
 
-        <Index />
+        <Index
+          heading="Get up **10% _cashback_** from the best gambling websites"
+          subheading="Exclusive cashbacks from over 300 gambling websites"
+          description="Multifun is an invite-only community offering members exclusive cashbacks from __over 300 gambling websites__. With Multifun, members always earn money back on losses."
+          loginLink="/login"
+          demoLink="#"
+        />
 
         <Logos
           title="Choose from over **300** websites including"
@@ -24,40 +33,15 @@ const Home = () => {
           ]}
         />
 
-        <div className="categories-big">
-          <ul className="categories-big__list">
-            <li>
-              <a href="/cashback">
-                <figure className="categories-big__icon"><img src="assets/img/big/casino.svg" alt="Casino" /></figure>
-                Casino
-              </a>
-            </li>
-            <li>
-              <a href="/cashback">
-                <figure className="categories-big__icon"><img src="assets/img/big/sport.svg" alt="Sports" /></figure>
-                Sports
-              </a>
-            </li>
-            <li>
-              <a href="/cashback">
-                <figure className="categories-big__icon"><img src="assets/img/big/fantasy.svg" alt="Fantasy" /></figure>
-                Fantasy
-              </a>
-            </li>
-            <li>
-              <a href="/cashback">
-                <figure className="categories-big__icon"><img src="assets/img/big/bingo.svg" alt="Bingo" /></figure>
-                Bingo
-              </a>
-            </li>
-            <li>
-              <a href="/cashback">
-                <figure className="categories-big__icon"><img src="assets/img/big/poker.svg" alt="Poker" /></figure>
-                Poker
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Categories
+          data={[
+            { href: '/cashback', src: 'assets/img/big/casino.svg', alt: 'Casino', label: 'Casino' },
+            { href: '/cashback', src: 'assets/img/big/sport.svg', alt: 'Sports', label: 'Sports' },
+            { href: '/cashback', src: 'assets/img/big/fantasy.svg', alt: 'Fantasy', label: 'Fantasy' },
+            { href: '/cashback', src: 'assets/img/big/bingo.svg', alt: 'Bingo', label: 'Bingo' },
+            { href: '/cashback', src: 'assets/img/big/poker.svg', alt: 'Poker', label: 'Poker' },
+          ]}
+        />
 
         <How
           heading="How it works?"
@@ -88,185 +72,134 @@ const Home = () => {
           mobileImage={{ src: "assets/img/screenshots/mobile.png", width: 180, height: 399, alt: "" }}
         />
 
-        <section className="games">
-          <h3 className="h3 games__heading">Top games <br />on the best casinos</h3>
-          <div className="glide games__carousel">
-            <div className="glide__track" data-glide-el="track">
-              <div className="glide__slides games__list">
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/templetumble.jpg" width="240" height="260" alt="Temple Tumble" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/sugarrush.jpg" width="240" height="260" alt="Sugar Rush" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/goldenfishtank.jpg" width="240" height="260" alt="Golden Fish Tank" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/riseofcoins.jpg" width="240" height="260" alt="Rise of Coins" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/templetumble-2.jpg" width="240" height="260" alt="Temple Tumble 2" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/templetumble.jpg" width="240" height="260" alt="Temple Tumble" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/sugarrush.jpg" width="240" height="260" alt="Sugar Rush" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="glide__slide">
-                  <div className="game">
-                    <figure className="game__preview">
-                      <img src="assets/img/games/goldenfishtank.jpg" width="240" height="260" alt="Golden Fish Tank" />
-                      <a href="#" className="btn btn-primary">Play</a>
-                    </figure>
-                    <p className="game__play">Play book of ra on:</p>
-                    <div className="game__platforms">
-                      <a href="#"><img src="assets/img/logos/casimba-sm.png" width="16" height="16" alt="" /> Casumo</a>
-                      <a href="#"><img src="assets/img/logos/rizk-sm.png" width="16" height="16" alt="" /> MRGreen</a>
-                      <a href="#"><img src="assets/img/logos/platincasino-sm.png" width="16" height="16" alt="" /> PlatinCasion</a>
-                      <a href="#">+12</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Games
+          heading="Top games on the best casinos"
+          games={[
+            {
+              name: "Temple Tumble",
+              imageSrc: "assets/img/games/templetumble.jpg",
+              altText: "Temple Tumble",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            },
+            {
+              name: "Sugar Rush",
+              imageSrc: "assets/img/games/sugarrush.jpg",
+              altText: "Sugar Rush",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            },
+            {
+              name: "Golden Fish Tank",
+              imageSrc: "assets/img/games/goldenfishtank.jpg",
+              altText: "Golden Fish Tank",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            },
+            {
+              name: "Rise of Coins",
+              imageSrc: "assets/img/games/riseofcoins.jpg",
+              altText: "Rise of Coins",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            },
+            {
+              name: "Temple Tumble 2",
+              imageSrc: "assets/img/games/templetumble-2.jpg",
+              altText: "Temple Tumble 2",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            },
+            {
+              name: "Temple Tumble",
+              imageSrc: "assets/img/games/templetumble.jpg",
+              altText: "Temple Tumble",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            },
+            {
+              name: "Sugar Rush",
+              imageSrc: "assets/img/games/sugarrush.jpg",
+              altText: "Sugar Rush",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            },
+            {
+              name: "Golden Fish Tank",
+              imageSrc: "assets/img/games/goldenfishtank.jpg",
+              altText: "Golden Fish Tank",
+              playLink: "#",
+              platforms: [
+                { name: "Casumo", link: "#", logo: "assets/img/logos/casimba-sm.png" },
+                { name: "MRGreen", link: "#", logo: "assets/img/logos/rizk-sm.png" },
+                { name: "PlatinCasion", link: "#", logo: "assets/img/logos/platincasino-sm.png" },
+              ],
+              extraPlatforms: 12
+            }
+          ]}
+        />
 
-        <section className="faq">
-          <div id="faq" className="faq__anchor"></div>
-          <header className="faq__header">
-            <h3 className="h2 faq__heading">FAQ</h3>
-            <p>Everything you need to know about earning your cashback</p>
-          </header>
-          <div className="faq__list">
-            <section className="faq__entry">
-              <h3 className="faq__question">What types of websites are supported?</h3>
-              <div className="faq__reply">
-                <div className="faq__space">
-                  <p>Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.</p>
-                </div>
-              </div>
-            </section>
-            <section className="faq__entry">
-              <h3 className="faq__question">When can I withdraw my cashback earnings?</h3>
-              <div className="faq__reply">
-                <div className="faq__space">
-                  <p>Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.</p>
-                </div>
-              </div>
-            </section>
-            <section className="faq__entry">
-              <h3 className="faq__question">How is cashback Calculated?</h3>
-              <div className="faq__reply">
-                <div className="faq__space">
-                  <p>Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.</p>
-                </div>
-              </div>
-            </section>
-            <section className="faq__entry">
-              <h3 className="faq__question">What payment methods are supported?</h3>
-              <div className="faq__reply">
-                <div className="faq__space">
-                  <p>Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.</p>
-                </div>
-              </div>
-            </section>
-            <section className="faq__entry">
-              <h3 className="faq__question">Can I earn cashback from an existing gambling account?</h3>
-              <div className="faq__reply">
-                <div className="faq__space">
-                  <p>Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.</p>
-                </div>
-              </div>
-            </section>
-          </div>
-        </section>
+        <FAQ
+          heading="FAQ"
+          subheading="Everything you need to know about earning your cashback"
+          data={[
+            {
+              question: 'What types of websites are supported?',
+              answer: 'Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.',
+            },
+            {
+              question: 'When can I withdraw my cashback earnings?',
+              answer: 'Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.',
+            },
+            {
+              question: 'How is cashback Calculated?',
+              answer: 'Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.',
+            },
+            {
+              question: 'What payment methods are supported?',
+              answer: 'Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.',
+            },
+            {
+              question: 'Can I earn cashback from an existing gambling account?',
+              answer: 'Absolutely. You can have accounts with different gambling websites, all of which will award you a combined cashback balance that you can withdraw all at once to your favorite payment method.',
+            },
+          ]}
+        />
 
         <CTA
           heading="Ready to earn cashback?"
