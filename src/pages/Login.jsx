@@ -1,8 +1,8 @@
-import LoginForm from "../components/Forms";
+import { LoginForm } from "../components/Forms";
 
 const Login = () => {
   return (
-    <main className="main main--flex dotted" id="top">
+    <main className="main main--flex dotted">
       <div className="wrapper">
 
         <LoginForm />

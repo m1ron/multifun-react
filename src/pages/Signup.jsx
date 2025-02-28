@@ -1,8 +1,8 @@
-import SignupForm from "../components/Forms";
+import { SignupForm } from "../components/Forms";
 
 const Signup = () => {
   return (
-    <main className="main main--flex dotted" id="top">
+    <main className="main main--flex dotted">
       <div className="wrapper">
 
         <SignupForm />

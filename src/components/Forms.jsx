@@ -1,4 +1,6 @@
-const LoginForm = () => {
+import React from 'react';
+
+export const LoginForm = () => {
   return (
     <form className="form form-login" action="./" method="get">
       <h3 className="form-heading">Log in</h3>
@@ -86,4 +88,12 @@ export const SignupForm = () => {
   );
 };
 
-export default LoginForm;
+// Default export: A full Footer component combining both
+const AllForms = () => (
+  <div>
+    <LoginForm />
+    <SignupForm />
+  </div>
+);
+
+export default AllForms;

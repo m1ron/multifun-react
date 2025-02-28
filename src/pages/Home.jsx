@@ -1,42 +1,28 @@
+import Index from '../components/Index';
+import Logos from '../components/Logos';
+import How from '../components/How';
+import One from '../components/One';
+import CTA from '../components/CTA';
+
 const Home = () => {
   return (
-    <main className="main dotted" id="top">
+    <main id="#top" className="main dotted">
       <article className="wrapper">
 
-        <header className="index">
-          <div className="index__content">
-            <h2 className="h1 index__heading">Get up <strong>10% <span className="zigzag">cashback</span></strong> <br />from the best gambling websites</h2>
-            <p>Multifun is an invite-only community offering members exclusive cashbacks from <strong>over 300 gambling websites</strong>. With Multifun, members always earn money back on losses.</p>
-            <div className="buttons index__buttons">
-              <a href="/login" className="btn btn-primary">Login Up</a>
-              <a href="#" className="btn">Watch Demo</a>
-            </div>
-          </div>
-        </header>
+        <Index />
 
-        <section className="logos">
-          <h3 className="logos__heading"><span>Choose from over <strong>300</strong> websites including</span></h3>
-          <div className="logos__marquee">
-            <ul className="logos__group">
-              <li><img src="assets/img/logos/playojo.png" width="82" height="72" alt="PLAYOJO" /></li>
-              <li><img src="assets/img/logos/casimba.png" width="97" height="72" alt="Casimba" /></li>
-              <li><img src="assets/img/logos/rizk.png" width="112" height="72" alt="RIZK" /></li>
-              <li><img src="assets/img/logos/platincasino.png" width="114" height="72" alt="Platin Casino" /></li>
-              <li><img src="assets/img/logos/bets10.png" width="121" height="72" alt="Bets10" /></li>
-              <li><img src="assets/img/logos/ibet.png" width="90" height="72" alt="Ibet" /></li>
-              <li><img src="assets/img/logos/laimz.png" width="93" height="72" alt="Laimz" /></li>
-            </ul>
-            <ul aria-hidden="true" className="logos__group">
-              <li><img src="assets/img/logos/playojo.png" width="82" height="72" alt="PLAYOJO" /></li>
-              <li><img src="assets/img/logos/casimba.png" width="97" height="72" alt="Casimba" /></li>
-              <li><img src="assets/img/logos/rizk.png" width="112" height="72" alt="RIZK" /></li>
-              <li><img src="assets/img/logos/platincasino.png" width="114" height="72" alt="Platin Casino" /></li>
-              <li><img src="assets/img/logos/bets10.png" width="121" height="72" alt="Bets10" /></li>
-              <li><img src="assets/img/logos/ibet.png" width="90" height="72" alt="Ibet" /></li>
-              <li><img src="assets/img/logos/laimz.png" width="93" height="72" alt="Laimz" /></li>
-            </ul>
-          </div>
-        </section>
+        <Logos
+          title="Choose from over **300** websites including"
+          logos={[
+            { src: "assets/img/logos/playojo.png", width: 82, height: 72, alt: "PLAYOJO" },
+            { src: "assets/img/logos/casimba.png", width: 97, height: 72, alt: "Casimba" },
+            { src: "assets/img/logos/rizk.png", width: 112, height: 72, alt: "RIZK" },
+            { src: "assets/img/logos/platincasino.png", width: 114, height: 72, alt: "Platin Casino" },
+            { src: "assets/img/logos/bets10.png", width: 121, height: 72, alt: "Bets10" },
+            { src: "assets/img/logos/ibet.png", width: 90, height: 72, alt: "Ibet" },
+            { src: "assets/img/logos/laimz.png", width: 93, height: 72, alt: "Laimz" },
+          ]}
+        />
 
         <div className="categories-big">
           <ul className="categories-big__list">
@@ -73,37 +59,34 @@ const Home = () => {
           </ul>
         </div>
 
-        <section className="how">
-          <div id="how" className="how__anchor"></div>
-          <h3 className="h2 how__heading">How it works?</h3>
-          <p>Very few gambling websites offer cashback to players. With Multifun, you can finally earn cashback from gambling brands that don't usually provide it. Earning cashback with Multifun is&nbsp;simple.</p>
-          <ol className="how__list">
-            <li>
-              <p>Choose a website from <strong>Multifun's</strong> <br />gambling directory.</p>
-              <figure className="how__icon"><img src="assets/img/how/list.svg" alt="" /></figure>
-            </li>
-            <li>
-              <p>Create your account through <br />a simple <strong>registration</strong> process.</p>
-              <figure className="how__icon"><img src="assets/img/how/stars.svg" alt="" /></figure>
-            </li>
-            <li>
-              <p>Start seeing your <strong>cashback</strong> <br />roll in your <strong>Multifun</strong> account daily.</p>
-              <figure className="how__icon"><img src="assets/img/how/price.svg" alt="" /></figure>
-            </li>
-          </ol>
-        </section>
+        <How
+          heading="How it works?"
+          description="Very few gambling websites offer cashback to players. With Multifun, you can finally earn cashback from gambling brands that don't usually provide it. Earning cashback with Multifun is simple."
+          steps={[
+            {
+              text: "Choose a website from Multifun's gambling directory.",
+              src: "assets/img/how/list.svg",
+              alt: "Website List"
+            },
+            {
+              text: "Create your account through a simple registration process.",
+              src: "assets/img/how/stars.svg",
+              alt: "Registration"
+            },
+            {
+              text: "Start seeing your cashback roll in your Multifun account daily.",
+              src: "assets/img/how/price.svg",
+              alt: "Cashback"
+            }
+          ]}
+        />
 
-        <section className="one">
-          <div id="one" className="one__anchor"></div>
-          <header className="one__header">
-            <h3 className="h2 one__heading"><em>One</em> account</h3>
-            <p>Very few gambling websites offer cashback to players. With Multifun, you can finally earn cashback from gambling brands that don't usually provide it. Earning cashback with Multifun is&nbsp;simple.</p>
-          </header>
-          <div className="one__screenshots">
-            <figure className="d"><img src="assets/img/screenshots/desktop.png" width="838" height="472" alt="Desktop" /></figure>
-            <figure className="m"><img src="assets/img/screenshots/mobile.png" width="180" height="399" alt="Mobile" /></figure>
-          </div>
-        </section>
+        <One
+          heading="*One* account"
+          text="With Multifun, you can finally earn cashback from gambling brands that don't usually provide it. Earning cashback with Multifun is simple."
+          desktopImage={{ src: "assets/img/screenshots/desktop.png", width: 838, height: 472, alt: "" }}
+          mobileImage={{ src: "assets/img/screenshots/mobile.png", width: 180, height: 399, alt: "" }}
+        />
 
         <section className="games">
           <h3 className="h3 games__heading">Top games <br />on the best casinos</h3>
@@ -285,10 +268,11 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="cta">
-          <h3>Ready to earn cashback?</h3>
-          <a className="btn btn-primary" href="/signup">Sign up</a>
-        </section>
+        <CTA
+          heading="Ready to earn cashback?"
+          action="Sign up"
+          link="/signup"
+        />
 
       </article>
     </main>
