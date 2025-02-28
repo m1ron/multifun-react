@@ -1,44 +1,3 @@
-const initParallax = () => {
-  const speed = .2;
-  const onScroll = () => {
-    document.documentElement.style.setProperty('--parallax-offset', `-${window.pageYOffset * speed}px`);
-  }
-  onScroll();
-  window.addEventListener('scroll', onScroll);
-};
-
-const initScroll = () => {
-  setTimeout(() => {
-    document.documentElement.classList.add('loaded');
-  }, 500);
-}
-
-const initNav = () => {
-  const header = document.querySelector('.header');
-  const nav = header.querySelector('.header__nav');
-  const toggle = header.querySelector('.header__toggle');
-  const overlay = header.querySelector('.header__overlay');
-  const close = header.querySelector('.header__close');
-
-  const onOpen = () => {
-    nav.classList.add('visible');
-    setTimeout(() => {
-      nav.classList.add('open');
-    }, 50)
-  };
-
-  const onClose = () => {
-    nav.classList.remove('open');
-    setTimeout(() => {
-      nav.classList.remove('visible');
-    }, 400)
-  };
-
-  toggle.addEventListener('click', onOpen);
-  overlay.addEventListener('click', onClose);
-  close.addEventListener('click', onClose);
-};
-
 const initForms = () => {
 
   // Selectboxes
@@ -222,9 +181,6 @@ const initGames = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initParallax();
-  initScroll();
-  initNav();
   initForms();
   initCategories();
   initGames();

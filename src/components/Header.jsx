@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const siteName = "Multifun";
-import siteLogo from "/assets/img/logo.svg";
+const siteName = 'Multifun';
+import siteLogo from '/assets/img/logo.svg';
+
+const siteMenu = [
+  { name: 'How It Works', href: '#how' },
+  { name: 'One Account', href: '#one' },
+  { name: 'FAQs', href: '#faq' }
+];
 
 const Header = () => {
 
@@ -44,9 +50,11 @@ const Header = () => {
         <div className="header__space">
           {menuHidden &&
             <ul className="header__menu">
-              <li><a href="#how">How It Works</a></li>
-              <li><a href="#one">One Account</a></li>
-              <li><a href="#faq">FAQs</a></li>
+              {siteMenu.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href}>{link.name}</a>
+                </li>
+              ))}
             </ul>
           }
           <div className="header__buttons">
