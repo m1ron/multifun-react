@@ -40,11 +40,11 @@ const Reviews = ({ heading, subheading, generated, data }) => {
         {data.map((entry, index) => (
           <li key={index} className={`review__entry ${openIndex === index ? 'open visible' : ''}`}>
             <h3 className="review__question" onClick={() => handleToggle(index)}>
-              {entry.question}
+              {entry.title}
             </h3>
             <div className="review__reply">
               <div className="review__space">
-                <ReactMarkdown>{entry.answer}</ReactMarkdown>
+                <ReactMarkdown>{entry.content}</ReactMarkdown>
               </div>
             </div>
           </li>
