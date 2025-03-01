@@ -6,6 +6,7 @@ import Cashback from './pages/Cashback';
 import Review from './pages/Review';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,7 +17,7 @@ import './styles/main.scss'
 
 function Layout() {
   const location = useLocation();
-  const hideFooterRoutes = ["/login", "/signup"];
+  const hideFooterRoutes = ["/login", "/signup", "/forgot-password"];
   const showFooter = !hideFooterRoutes.includes(location.pathname);
 
   useEffect(() => {
@@ -47,6 +48,7 @@ function Layout() {
         <Route path="/review" element={<Review />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
       {showFooter && <Footer />}
     </>

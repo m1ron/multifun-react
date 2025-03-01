@@ -14,7 +14,7 @@ const Header = () => {
   const location = useLocation();
   const indexPage = !["/"].includes(location.pathname);
   const indexLink = indexPage ? "./" : "#top";
-  const menuHidden = !["/login", "/signup"].includes(location.pathname);
+  const menuHidden = !["/login", "/signup", "/forgot-password"].includes(location.pathname);
   const loginHidden = !["/login"].includes(location.pathname);
   const signupHidden = !["/signup"].includes(location.pathname);
 

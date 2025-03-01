@@ -88,11 +88,31 @@ export const SignupForm = () => {
   );
 };
 
+export const ForgotPasswordForm = () => {
+  return (
+    <form className="form form-login" action="./" method="get">
+      <h3 className="form-heading">Forgot Password?</h3>
+      <p className="form-subheading">Enter your email below</p>
+      <div className="form-group">
+        <label className="form-label" htmlFor="email"></label>
+        <input id="email" type="email" className="form-control form-control-log" required placeholder="Email address" />
+      </div>
+      <div className="form-group form-group-btn">
+        <button className="btn btn-primary" type="submit">Reset Password</button>
+      </div>
+      <div className="form-link form-link-back">
+        <a href="/login"><img className="form-icon" src="assets/img/svg/arrow-left.svg" alt="" /> Back to login page</a>
+      </div>
+    </form>
+  );
+};
+
 // Default export: A full Footer component combining both
 const AllForms = () => (
   <div>
     <LoginForm />
     <SignupForm />
+    <ForgotPasswordForm />
   </div>
 );
 
