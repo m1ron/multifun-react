@@ -1,4 +1,5 @@
 import React from 'react';
+import Signup from "../pages/Signup.jsx";
 
 export const LoginForm = () => {
   return (
@@ -107,12 +108,53 @@ export const ForgotPasswordForm = () => {
   );
 };
 
+export const LoginForm2 = () => {
+  return (
+    <div class="wrapper">
+      <div className="col">
+        <div className="slider">
+          <div className="slider__item">
+            <figure><img src="assets/img/slider/1.jpg" alt="" /></figure>
+          </div>
+          <div className="slider__item">
+            <figure><img src="assets/img/slider/2.jpg" alt="" /></figure>
+          </div>
+          <div className="slider__item">
+            <figure><img src="assets/img/slider/3.jpg" alt="" /></figure>
+          </div>
+        </div>
+      </div>
+      <div className="col">
+        <form className="form form-login" action="./" method="get">
+          <figure className="form-logo"><a href="/"><img src="assets/img/logo.svg" alt="Multifun" /></a></figure>
+          <h3 className="form-heading">Login into your account</h3>
+          <div className="form-group">
+            <label className="form-label" htmlFor="email"></label>
+            <input id="email" type="email" className="form-control form-control-log" required placeholder="Email address" />
+          </div>
+          <div className="form-group">
+            <label className="form-label" htmlFor="password"></label>
+            <input id="password" type="password" className="form-control form-control-password" required placeholder="Password" />
+          </div>
+          <div className="form-group form-group-btn">
+            <button className="btn btn-primary" type="submit">Sign In</button>
+          </div>
+          <div className="form-link form-link-bottom">
+            <p>Don't have an account? <a className="btn btn-outline" href="/signup">Sign up for multifun</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
 // Default export: A full Footer component combining both
 const AllForms = () => (
   <div>
     <LoginForm />
     <SignupForm />
     <ForgotPasswordForm />
+    <LoginForm2 />
   </div>
 );
 

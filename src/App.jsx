@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Cashback from './pages/Cashback';
 import Review from './pages/Review';
 import Login from './pages/Login';
+import Login2 from './pages/Login2';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 
@@ -13,12 +14,10 @@ import Footer from './components/Footer';
 
 import './styles/main.scss'
 
-//import './js/script.js'
-
 function Layout() {
   const location = useLocation();
-  const hideFooterRoutes = ["/login", "/signup", "/forgot-password"];
-  const showFooter = !hideFooterRoutes.includes(location.pathname);
+  const showHeader = !["/login2"].includes(location.pathname);
+  const showFooter = !["/login", "/signup", "/forgot-password", "/login2"].includes(location.pathname);
 
   useEffect(() => {
     document.documentElement.classList.add('loaded');
@@ -41,14 +40,15 @@ function Layout() {
 
   return (
     <>
-      <Header />
+      {showHeader && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cashback" element={<Cashback />} />
         <Route path="/review" element={<Review />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login2" element={<Login2 />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       {showFooter && <Footer />}
     </>
