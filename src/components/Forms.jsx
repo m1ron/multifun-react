@@ -1,5 +1,5 @@
-import React from 'react';
-import Signup from "../pages/Signup.jsx";
+import React, { useState, useEffect } from 'react';
+import NiceSelect from 'nice-select2';
 
 export const LoginForm = () => {
   return (
@@ -26,7 +26,58 @@ export const LoginForm = () => {
   );
 };
 
+export const PasswordToggle = ({ id, placeholder }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const togglePassword = (event) => {
+    event.preventDefault();
+    setIsVisible((prev) => !prev);
+  };
+
+  return (
+    <div className="form-group">
+      <input id={id} type={isVisible ? "text" : "password"} className="form-control form-control-password" required placeholder={placeholder} autoComplete="off" />
+      <span className={`form-password-toggle ${isVisible ? "active" : ""}`} onClick={togglePassword}></span>
+    </div>
+  );
+};
+
+export const NiceSelectComponent = ({ options, id, placeholder, required, defaultValue, onChange, className }) => {
+  useEffect(() => {
+    if (typeof NiceSelect !== 'undefined') {
+      const selectElement = document.querySelector("select.form-select:not(.inited)");
+      if (selectElement) {
+        console.log(selectElement);
+        selectElement.classList.add('inited');
+        const instance = new NiceSelect(selectElement);
+        console.log(instance);
+        //return () => instance.destroy();
+      }
+    }
+  }, []);
+
+  return (
+    <div className="form-select-wrap">
+      <select id={id} className="form-select" onChange={onChange} defaultValue={defaultValue} placeholder={placeholder} required>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+
 export const SignupForm = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const togglePassword = (event) => {
+    event.preventDefault();
+    setIsVisible((prev) => !prev);
+  };
+
   return (
     <form className="form form-login" action="./" method="get">
       <h3 className="form-heading">Sign Up</h3>
@@ -42,39 +93,47 @@ export const SignupForm = () => {
         </div>
       </div>
       <div className="form-group">
-        <div className="form-select-wrap">
-          <select className="form-select" id="country" placeholder="Choose your country" required>
-            <option value="United States" className="flag flag-us">United States</option>
-            <option value="China" className="flag flag-cn">China</option>
-            <option value="Czech Republic" className="flag flag-cz">Czech Republic</option>
-            <option value="Denmark" className="flag flag-dk">Denmark</option>
-            <option value="France" className="flag flag-fr">France</option>
-            <option value="Germany" className="flag flag-de">Germany</option>
-            <option value="Greece" className="flag flag-gr">Greece</option>
-          </select>
-        </div>
+        <NiceSelectComponent
+          id="country"
+          placeholder="Choose your country"
+          options={[
+            { value: "United States", label: "United States", class: "flag flag-us" },
+            { value: "China", label: "China", class: "flag flag-cn" },
+            { value: "Czech Republic", label: "Czech Republic", class: "flag flag-cz" },
+            { value: "Denmark", label: "Denmark", class: "flag flag-dk" },
+            { value: "France", label: "France", class: "flag flag-fr" },
+            { value: "Germany", label: "Germany", class: "flag flag-de" },
+            { value: "Greece", label: "Greece", class: "flag flag-gr" },
+          ]}
+        />
       </div>
       <div className="form-group">
-        <div className="form-select-wrap">
-          <select className="form-select" id="language" placeholder="Language" required>
-            <option value="cn" className="flag flag-cn">Chinese</option>
-            <option value="cz" className="flag flag-cz">Czech</option>
-            <option value="dk" className="flag flag-dk">Danish</option>
-            <option value="en" className="flag flag-gb">English</option>
-            <option value="fr" className="flag flag-fr">French</option>
-            <option value="de" className="flag flag-de">German</option>
-            <option value="el" className="flag flag-gr">Greek</option>
-            <option value="he" className="flag flag-il">Hebrew</option>
-          </select>
-        </div>
+        <NiceSelectComponent
+          id="language"
+          placeholder="Language"
+          options={[
+            { value: "English", label: "English", class: "flag flag-gb" },
+            { value: "Chinese", label: "Chinese", class: "flag flag-cn" },
+            { value: "Czech", label: "Czech", class: "flag flag-cz" },
+            { value: "Danish", label: "Danish", class: "flag flag-dk" },
+            { value: "French", label: "French", class: "flag flag-fr" },
+            { value: "German", label: "German", class: "flag flag-de" },
+            { value: "Greek", label: "Greek", class: "flag flag-gr" },
+            { value: "Hebrew", label: "Hebrew", class: "flag flag-il" },
+          ]}
+        />
       </div>
       <div className="form-group">
-        <input id="password" type="password" className="form-control form-control-password" required placeholder="Password" autoComplete="off" />
-        <a href="#" className="form-password-toggle"></a>
+        <PasswordToggle
+          id="password"
+          placeholder="Password"
+        />
       </div>
       <div className="form-group">
-        <input id="password-2" type="password" className="form-control form-control-password" required placeholder="Repeat Password" autoComplete="off" />
-        <a href="#" className="form-password-toggle"></a>
+        <PasswordToggle
+          id="password-repeat"
+          placeholder="Repeat Password"
+        />
       </div>
       <div className="form-group form-link form-link-code">
         <a href="#" className="white"><img className="form-icon" src="assets/img/svg/gift-sm.svg" alt="" />Referral code?</a>

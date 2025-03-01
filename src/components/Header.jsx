@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const headerName = 'Multifun';
 import headerLogo from '/assets/img/logo.svg';
 
-const headerMenu = [{ name: 'How It Works', href: '#how' }, { name: 'One Account', href: '#one' }, { name: 'FAQs', href: '#faq' }];
+const headerMenu = [{ name: 'How It Works', href: '/#how' }, { name: 'One Account', href: '/#one' }, { name: 'FAQs', href: '/#faq' }];
 
 const headerButtons = [{ name: 'Log In', href: '/login' }, { name: 'Sign Up', href: '/signup' }];
 

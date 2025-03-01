@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useRef } from "react";
+import Glide from '@glidejs/glide/dist/glide'
 
 const GamesCarousel = ({ heading, games }) => {
+  const glideRef = useRef(null);
+
+  useEffect(() => {
+    const glideInstance = new Glide(glideRef.current, {
+      perView: 5,
+      gap: 20,
+      breakpoints: {
+        991: { perView: 4, gap: 16 },
+        767: { perView: 3 },
+        520: { perView: 2 },
+      },
+    });
+    glideInstance.mount();
+    return () => glideInstance.destroy();
+  }, []);
   return (
     <section className="games">
       <h3 className="h3 games__heading">{heading}</h3>
-      <div className="glide games__carousel">
+      <div className="glide games__carousel" ref={glideRef}>
         <div className="glide__track" data-glide-el="track">
           <div className="glide__slides games__list">
             {games.map((game, index) => (
